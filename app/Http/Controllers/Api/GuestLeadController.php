@@ -12,7 +12,7 @@ use App\Models\GuestLead;
 
 use App\Mail\GuestContact;
 
-class GuestController extends Controller
+class GuestLeadController extends Controller
 {
     public function store(Request $request){
         $data = $request->all();
