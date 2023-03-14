@@ -19,7 +19,7 @@ use App\Http\Controllers\Api\GuestLeadController as GuestLeadController;
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{slug}', [PostController::class, 'show']);
-Route::get('/contacts', [GuestLeadController::class, 'store']);
+Route::post('/contacts', [GuestLeadController::class, 'store']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
