@@ -20,6 +20,8 @@ class GuestLeadController extends Controller
         // VALIDIAMO 
         $validator = Validator::make($data,
         [
+            // prenderli dalla FORM
+
             'name' => 'required',
             'surname' => 'required',
             'phone' => 'required',
@@ -43,6 +45,8 @@ class GuestLeadController extends Controller
         $newContact->fill($data);
 
         $newContact->save();
+
+        // Invio di Email
         Mail::to('hello@example.com')->send(new GuestContact($newContact));
 
         return response()->json([
